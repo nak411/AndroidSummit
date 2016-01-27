@@ -1,2 +1,8 @@
-# Summit2015Android
-Android app for Summit for Software Engineers 2015
+# AndroidSummit
+Schedule app for Android Summit 2015 held at Capital One Event Space.
+
+A compiled version is available on [play store](https://play.google.com/store/apps/details?id=org.androidsummit.eventapp&hl=en)
+
+[Parse](https://parse.com/) is used as a backend and you will need provide your own parse keys before running the app.
+
+More details: coming soon!
