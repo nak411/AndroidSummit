@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/default_padding"
+    android:orientation="horizontal">
+
+    <org.androidsummit.eventapp.ui.CircularParseImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="@dimen/list_avatar_height"
+        android:layout_height="@dimen/list_avatar_width"
+        android:src="@drawable/profile_placeholder"/>
+
+    <TextView
+        android:id="@id/tv_name"
+        android:textSize="@dimen/title_sub_size_1"
+        android:paddingLeft="@dimen/default_padding"
+        android:text="First Name Last Name"
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

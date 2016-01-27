@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_padding"
+        android:layout_marginRight="@dimen/default_padding"
+        android:layout_marginTop="@dimen/default_mini_padding"
+        android:layout_marginBottom="@dimen/default_mini_padding">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/default_padding"
+            android:orientation="vertical">
+
+        <TextView
+                android:text="@string/sponsor"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/text_size_headline_material"
+                android:textColor="@color/medium_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <View
+                android:layout_width="@dimen/list_avatar_width"
+                android:layout_height="@dimen/underline_height"
+                android:layout_marginTop="@dimen/default_micro_padding"
+                android:paddingBottom="@dimen/default_mini_padding"
+                android:background="@color/pink"
+                android:layout_gravity="center_horizontal"/>
+
+        <ImageView
+                android:padding="@dimen/default_micro_padding"
+                android:src="@drawable/cof_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

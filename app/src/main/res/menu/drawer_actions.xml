@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/schedule"
+                android:icon="@drawable/ic_event_black_24dp"
+                android:title="@string/title_section1"/>
+
+        <item
+                android:id="@+id/my_schedule"
+                android:icon="@drawable/ic_event_black_24dp"
+                android:title="@string/title_section2"/>
+
+        <item
+                android:id="@+id/speakers"
+                android:icon="@drawable/ic_group_black_24dp"
+                android:title="@string/title_section3"/>
+
+        <item
+                android:id="@+id/about"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="@string/title_section4"/>
+    </group>
+</menu>

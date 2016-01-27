@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- the theme applied to the application or activity -->
+    <style name="CustomActionBarTheme"
+           parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/SummitActionBarTheme</item>
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/SummitActionBarTheme</item>
+    </style>
+
+    <!-- the theme applied to the application or activity -->
+    <style name="CustomActionBarTheme.NoShadow">
+        <!-- Removes the shadow from action bar-->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="SummitActionBarTheme"
+           parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/dark_royal_blue</item>
+        <!-- Support library compatibility -->
+        <item name="background">@color/dark_royal_blue</item>
+    </style>
+</resources>

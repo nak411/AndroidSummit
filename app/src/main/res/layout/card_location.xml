@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_padding"
+        android:layout_marginRight="@dimen/default_padding"
+        android:layout_marginTop="@dimen/default_mini_padding"
+        android:layout_marginBottom="@dimen/default_mini_padding">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <ImageView
+                android:src="@drawable/towers_about"
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="@string/event_date"
+                android:padding="@dimen/default_padding"
+                android:textSize="@dimen/text_size_subhead_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="@string/location"
+                android:paddingLeft="@dimen/default_padding"
+                android:paddingRight="@dimen/default_padding"
+                android:textSize="@dimen/text_size_headline_material"
+                android:textColor="@color/medium_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="@string/event_location"
+                android:paddingLeft="@dimen/default_padding"
+                android:paddingRight="@dimen/default_padding"
+                android:paddingTop="@dimen/default_mini_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:textSize="@dimen/text_size_subhead_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/btn_get_directions"
+                android:text="@string/get_directions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pink"
+                android:padding="@dimen/default_mini_padding"
+                android:minHeight="@dimen/touch_target_size"
+                style="?android:attr/borderlessButtonStyle"/>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

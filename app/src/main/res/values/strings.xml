@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<string name="parse_app_id">ADD YOUR PARSE KEY HERE</string>-->
+    <!--<string name="parse_client_key">ADD YOUR PARSE KEY HERE</string>-->
+    <string name="app_name">Android Summit</string>
+    <string name="title_section1">Schedule</string>
+    <string name="title_section2">My Schedule</string>
+    <string name="title_section3">Speakers</string>
+    <string name="title_section4">About</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_bootstrap">Bootstrap</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="label_initialize">Initialize Parse</string>
+    <string name="label_launch">Launch</string>
+    <string name="login_title_1">Software Engineering</string>
+    <string name="login_title_2">SUMMIT</string>
+    <string name="login_title_sub_1">Washington, DC</string>
+    <string name="title_activity_session_detail">SessionDetailActivity</string>
+    <string name="place_holder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id felis sit amet nisl sollicitudin
+        porttitor.
+    </string>
+    <string name="place_holder_small">Lorem ipsum.</string>
+    <string name="place_holder_multi_line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue euismod lorem, sit amet
+        venenatis erat varius ac. Ut eleifend non diam vel tempus. Praesent nec nunc consectetur, varius urna in, blandit enim. Etiam
+        tincidunt urna euismod, maximus diam et, pharetra arcu. Vivamus et sollicitudin elit. Pellentesque facilisis, eros sed ullamcorper
+        varius, dolor eros tincidunt augue, at rhoncus dolor arcu a erat. Pellentesque enim libero, tristique eget mauris vel, aliquet porta
+        orci. Etiam ultrices pharetra lorem, nec dapibus orci tristique ac. Donec mattis lobortis gravida..
+    </string>
+    <string name="title_activity_person_detail">PersonDetailActivity</string>
+    <string name="about_detail">During this one-week program, an exceptional group of rising sophomores and juniors will convene at Capital
+        One’s corporate headquarters outside Washington, D.C., to explore and develop the software and technology skills valued by today’s
+        top employers.\nThe week includes a great series of trainings on emerging technologies and trends, a rigorous hackathon and presentation to Capital
+        One leadership and a slew of fun activities throughout the week. You will have the opportunity to meet recent college grads now
+        employed at Capital One and network with other students from top colleges and universities. This week we encourage to learn
+        something new and challenge yourself in this exciting corporate setting!
+    </string>
+    <string name="about_heading">May 17-22, 2015 - McLean, VA</string>
+    <string name="contact_label">Contact Info</string>
+    <string-array name="contacts">
+        <item>Jason Valentino - 804.248.2247</item>
+        <item>Sinclair Scott - 804.986.5992</item>
+        <item>Elizabeth Schwieder - 804.960.7593</item>
+    </string-array>
+    <string name="hotel_label">Hotel Info</string>
+    <string name="hotel_info">
+        Hilton Tysons Corner in McLean, VA\n7920 Jones Branch Dr, Mclean, VA 22102\n(703) 847-5000
+    </string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_btn_label">Log in</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="app_name_launcher">Android Summit</string>
+    <string name="login_invalid_credentials">Incorrect username and/or password</string>
+    <string name="unknown_error">Could not log in, please try again later</string>
+    <string name="no_user_name">Please enter your username</string>
+    <string name="no_password">Please enter your password</string>
+    <string name="logout">Log out</string>
+    <string name="event_label">Event Details:</string>
+    <string name="label_presenters">Presenters:</string>
+    <string name="action_change_password">Change password</string>
+    <string name="title_activity_password_reset">PasswordResetActivity</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="old_password_hint">Old password</string>
+    <string name="new_password">New password</string>
+    <string name="new_password_reenter">Confirm new password</string>
+    <string name="reset_btn_label">Reset password</string>
+    <string name="change_password">Change password</string>
+    <string name="error_msg">Error retrieving data</string>
+    <string name="title_activity_event_ended">EventEndedActivity</string>
+    <string name="event_ended_label">This event has now ended.</string>
+    <string name="nav_header_title">Android Summit</string>
+    <string name="time">Time</string>
+    <string name="what_is_android_summit">Android Summit is a one-day, multi-track conference focused on designing and developing for
+        Android.
+    </string>
+    <string name="text_android">Android</string>
+    <string name="what_to_expect">What to expect</string>
+    <string name="learn"><![CDATA[Learn about Android design & development]]></string>
+    <string name="developer_note">Developers: Make sure you bring your laptop with the latest stable/canary Android Studio and API 23
+        SDK/tools!
+    </string>
+    <string name="code_of_conduct">CODE OF CONDUCT</string>
+    <string name="meet">Meet people who love Android</string>
+    <string name="eat">Eat delicious food with new friends</string>
+    <string name="swag">Get your swag on</string>
+    <string name="kick_off">Help us kick off our first Android Summit with a bang!</string>
+    <string name="event_date">September 30, 2015</string>
+    <string name="location">Capital One DIG Event Space</string>
+    <string name="event_location">Vienna, VA</string>
+    <string name="get_directions">GET DIRECTIONS</string>
+    <string name="sponsor">Sponsor</string>
+    <string name="contact">Questions?</string>
+    <string name="email_title">Email us at</string>
+    <string name="email_address">info@androidsummit.com</string>
+    <string name="code_of_conduct_uri">http://www.androidsummit.org/conduct.html</string>
+    <string name="no_valid_activity">No application found to handle this action</string>
+    <string name="twitter_id">\@androidsummit</string>
+    <string name="summit">Summit</string>
+
+    <string name="my_session_added">Successfully added to My Schedule, You will be notified 5 minutes before the start of session</string>
+    <string name="my_session_removed">Successfully removed from My Schedule, You will not be notified before start of session</string>
+    <string name="my_session_ended">It\'s too late to subscribe for notifications, session either started or already ended.</string>
+</resources>

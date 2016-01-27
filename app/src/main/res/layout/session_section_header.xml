@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/tv_row_header"
+          android:text="6 pm - 7 pm"
+          android:textSize="@dimen/text_size_subhead_material"
+          android:paddingLeft="@dimen/default_padding"
+          android:paddingTop="@dimen/default_mini_padding"
+          android:paddingBottom="@dimen/default_mini_padding"
+          android:textStyle="bold"
+          android:textColor="@color/medium_light_black"
+          android:background="@color/medium_gray"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+</TextView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.androidsummit.eventapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!--
+      IMPORTANT: Change "com.parse.tutorials.pushnotifications.permission.C2D_MESSAGE" in the lines below
+      to match your app's package name + ".permission.C2D_MESSAGE".
+    -->
+    <permission
+        android:name="org.androidsummit.eventapp.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="org.androidsummit.eventapp.permission.C2D_MESSAGE" />
+
+    <application
+        android:name="org.androidsummit.eventapp.MainApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="org.androidsummit.eventapp.activities.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.androidsummit.eventapp.activities.SummitSessionDetailActivity"
+            android:label="@string/title_activity_session_detail"
+            android:parentActivityName=".activities.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.androidsummit.eventapp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.SpeakerDetailActivity"
+            android:label="@string/title_activity_person_detail">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.androidsummit.eventapp.activities.MainActivity" />
+        </activity>
+
+        <activity
+                android:name=".activities.EventEndedActivity"
+                android:label="@string/title_activity_event_ended"/>
+
+        <!-- Push notifications -->
+        <!-- Service -->
+        <service android:name="com.parse.PushService" />
+        <receiver
+                android:name="org.androidsummit.eventapp.receivers.DataUpdatePushBroadcastReceiver"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="org.androidsummit.eventapp" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".notifications.NotificationPublisher" />
+
+    </application>
+
+</manifest>

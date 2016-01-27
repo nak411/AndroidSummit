@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!--http://www.google.com/design/spec/components/lists.html#lists-specs-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/default_padding"
+    android:paddingLeft="@dimen/default_padding"
+    android:background="?attr/selectableItemBackground">
+
+    <!--Profile Pic-->
+    <org.androidsummit.eventapp.ui.CircularParseImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="@dimen/list_avatar_width"
+        android:layout_height="@dimen/list_avatar_height"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/profile_placeholder" />
+
+
+    <!--Name-->
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_toRightOf="@id/iv_pic"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/medium_black"
+        android:paddingLeft="@dimen/default_padding"
+        android:paddingTop="@dimen/text_size_title_material"
+        android:textSize="@dimen/text_size_subhead_material" />
+
+    <!--School-->
+    <TextView
+        android:paddingLeft="@dimen/default_padding"
+        android:id="@+id/tv_subtitle"
+        android:layout_toRightOf="@id/iv_pic"
+        android:layout_below="@id/tv_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/text_size_title_material"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/font_size_min" />
+</RelativeLayout>

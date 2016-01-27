@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.AppTheme">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/dark_blue</item>
+    </style>
+
+    <!-- App bar shadow-->
+    <style name="AppBarShadow">
+        <item name="android:background">@drawable/toolbar_drop_shadow</item>
+        <item name="android:elevation">@dimen/default_mini_padding</item>
+    </style>
+</resources>

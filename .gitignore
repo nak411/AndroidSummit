@@ -1,0 +1,14 @@
+parse_keys.xml
+.gradle
+gradle/
+/local.properties
+.DS_Store
+/build
+.idea/
+gradlew
+gradlew.bat
+*.iml
+gradle.properties
+*.apk
+app/manifest-merger-release-report.txt
+ParseLoginUI/build/
