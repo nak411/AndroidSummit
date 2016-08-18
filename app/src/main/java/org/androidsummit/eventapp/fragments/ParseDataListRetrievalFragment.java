@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 
-import org.androidsummit.eventapp.managers.DataManager;
+import org.androidsummit.eventapp.cache.managers.DataManager;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 

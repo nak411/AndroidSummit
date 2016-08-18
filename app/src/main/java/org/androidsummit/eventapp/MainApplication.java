@@ -4,12 +4,12 @@ import android.app.Application;
 import android.os.StrictMode;
 import android.util.Log;
 
-import org.androidsummit.eventapp.helpers.DataCacheTracker;
+import org.androidsummit.eventapp.cache.DataCacheTracker;
 import org.androidsummit.eventapp.model.MySummitSession;
 import org.androidsummit.eventapp.model.generic.Person;
 import org.androidsummit.eventapp.model.SummitSession;
 import org.androidsummit.eventapp.model.Speaker;
-import org.androidsummit.eventapp.helpers.person.DateHelper;
+import org.androidsummit.eventapp.utils.helpers.DateHelper;
 import org.androidsummit.eventapp.model.trackers.Metadata;
 import org.androidsummit.eventapp.tasks.MetadataCheckTask;
 import com.parse.Parse;

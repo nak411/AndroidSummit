@@ -7,7 +7,7 @@ import android.util.Log;
 
 import com.parse.ParseObject;
 
-import org.androidsummit.eventapp.managers.DataManager;
+import org.androidsummit.eventapp.cache.managers.DataManager;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class ParseDataModificationFragment extends Fragment implements DataManag
 
     }
 
-    
+
     @Override
     public void onDataSaveError() {
 

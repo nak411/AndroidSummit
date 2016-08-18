@@ -1,6 +1,6 @@
 package org.androidsummit.eventapp.model.wrappers;
 
-import org.androidsummit.eventapp.enums.SessionRowViewType;
+import org.androidsummit.eventapp.model.enums.SessionRowViewType;
 import org.androidsummit.eventapp.model.SummitSession;
 
 import java.util.List;

@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="org.androidsummit.eventapp.activities.SummitSessionDetailActivity"/>
+        tools:context=".schedule.SummitSessionDetailActivity"/>
 
     <!-- FAB-->
     <android.support.design.widget.FloatingActionButton
