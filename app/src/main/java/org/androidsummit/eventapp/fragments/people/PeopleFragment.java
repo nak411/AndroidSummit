@@ -91,8 +91,6 @@ public abstract class PeopleFragment<T extends Person> extends ParseDataListRetr
     }
 
     private boolean requiresSync() {
-        // SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        //return !preferences.contains(getSyncStateKey()) || preferences.getBoolean(getSyncStateKey(), true);
         return SyncStateManager.requiresSync(getContext(), getSyncStateKey());
     }
 

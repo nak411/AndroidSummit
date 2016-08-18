@@ -1,5 +1,7 @@
 package org.androidsummit.eventapp.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -49,6 +51,10 @@ public class MainActivity extends AppCompatActivity
 
     static {
         EVENT_DATE = DateHelper.getFormattedFullDateAndTime("09", "30", "2015");
+    }
+
+    public static Intent getStartIntent(Context context) {
+        return new Intent(context, MainActivity.class);
     }
 
     @Override

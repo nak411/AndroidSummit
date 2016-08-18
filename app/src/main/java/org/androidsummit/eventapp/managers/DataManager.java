@@ -292,6 +292,7 @@ public class DataManager {
             }
         });
     }
+
     private Context retrieveContext() {
         DataCallbacks callbacks = getValidCallBacks();
         if (mCallbackRef != null) {
@@ -313,12 +314,14 @@ public class DataManager {
             public void done(ParseException e) {
                 if (e == null) {
                     Context context = retrieveContext();
+                    reportDataDeleted(false);
                     if (context != null) {
                         DataCacheTracker.setDataCleared(context);
                     }
                     DebugUtils.log(TAG, "Successfully cleared database");
                 } else {
-                    Log.e(TAG, "Failed to clear database");
+                    Log.e(TAG, "Failed to clear database", e);
+                    reportDataDeleteError();
                 }
             }
         });
