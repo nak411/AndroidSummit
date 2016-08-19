@@ -51,11 +51,11 @@ public abstract class SessionDetailDataFragment extends DetailsFragment<SummitSe
     protected void addToMySchedule(SummitSession summitSession) {
         //Create a mySession object
         mSavedObject = new MySummitSession(summitSession.getStartTime(), summitSession);
-        saveToLocal(summitSession);
+        saveGenericObjectToLocal(mSavedObject);
     }
 
-    protected void removeFromMySchedule(SummitSession summitSession) {
-        deleteFromLocal(summitSession);
+    protected void removeFromMySchedule(MySummitSession mySummitSession) {
+        deleteGenericFromLocal(mySummitSession);
     }
 
     @Override

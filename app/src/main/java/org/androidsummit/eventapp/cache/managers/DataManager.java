@@ -103,6 +103,32 @@ public class DataManager {
     }
 
     /**
+     * Retrieves the data from local data store only.  No attempt will be made to reach out to the server
+     * if the data is not found locally.
+     * @param query the query used for retrieving the data list
+     */
+    public <T extends ParseObject> void retrieveDataObjectListFromLocal(ParseQuery<T> query) {
+        query.fromLocalDatastore();
+        query.findInBackground(new FindCallback<T>() {
+            @Override
+            public void done(List<T> list, ParseException e) {
+                if (e == null) {
+                    //Query was successful
+                    if (list == null) {
+                        //Initialize to empty list to prevent null checks for success cases
+                        list = new ArrayList<>();
+                    }
+                    //Successfully loaded data
+                    reportDataListLoaded(list, false);
+                } else {
+                    //Failed to get local data
+                    reportError();
+                }
+            }
+        });
+    }
+
+    /**
      * Attempt to retrieve data object from the local data store. If no data is found, a request will be made to the server to get data.
      *
      * @param query         the query used for retrieving the data object
@@ -134,6 +160,8 @@ public class DataManager {
             }
         });
     }
+
+
 
     /**
      * Retrieve data from server using the provided query and object id
@@ -443,6 +471,7 @@ public class DataManager {
         }
         return null;
     }
+
 
     /**
      * Callbacks used for reporting back to the client after data has loaded/modified.

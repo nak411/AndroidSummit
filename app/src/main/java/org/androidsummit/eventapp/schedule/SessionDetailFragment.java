@@ -127,7 +127,7 @@ public class SessionDetailFragment extends SessionDetailDataFragment {
                     if (mySummitSession == null) {
                         addSessionToMySchedule(summitSession);
                     } else {
-                        removeSessionFromMySchedule(summitSession);
+                        removeSessionFromMySchedule(mySummitSession);
                     }
                 }
             });
@@ -177,23 +177,6 @@ public class SessionDetailFragment extends SessionDetailDataFragment {
         }
     }
 
-//    private void checkIfThisIsMySession(final SummitSession summitSession) {
-//        ParseQuery<MySummitSession> query = ParseQuery.getQuery(MySummitSession.class);
-//        query.fromLocalDatastore();
-//        query.whereEqualTo(MySummitSession.SESSION_ID, summitSession.getObjectId());
-//        query.getFirstInBackground(new GetCallback<MySummitSession>() {
-//            @Override
-//            public void done(MySummitSession object, ParseException e) {
-//                mySummitSession = object;
-//                if (mySummitSession == null) {
-//                    mFabCallbacks.setFabImageResource(R.drawable.ic_add);
-//                } else {
-//                    mFabCallbacks.setFabImageResource(R.drawable.ic_remove);
-//                }
-//            }
-//        });
-//    }
-
     @Override
     protected void onMySessionLoaded(MySummitSession object) {
         mySummitSession = object;
@@ -217,10 +200,10 @@ public class SessionDetailFragment extends SessionDetailDataFragment {
     @Override
     protected void onRemoveFromMyScheduleComplete(boolean success) {
         if (success) {
-            mySummitSession = null;
             mFabCallbacks.setFabImageResource(R.drawable.ic_add);
             showSnackBar(R.string.my_session_removed);
             removeNotifications(mySummitSession.getSummitSession());
+            mySummitSession = null;
         }
     }
 
@@ -232,35 +215,12 @@ public class SessionDetailFragment extends SessionDetailDataFragment {
         if (isSessionFinished(summitSession.getStartTime())) {
             showSnackBar(R.string.my_session_ended);
         } else {
-//            final MySummitSession thisSession = new MySummitSession(summitSession.getStartTime(), summitSession);
-//            thisSession.pinInBackground(new SaveCallback() {
-//                @Override
-//                public void done(ParseException e) {
-//                    if (e == null) {
-//                        mySummitSession = thisSession;
-//                        mFabCallbacks.setFabImageResource(R.drawable.ic_remove);
-//                        showSnackBar(R.string.my_session_added);
-//                        setupNotifications(summitSession);
-//                    }
-//                }
-//            });
             addToMySchedule(summitSession);
         }
     }
 
-    private void removeSessionFromMySchedule(SummitSession summitSession) {
-//        mySummitSession.unpinInBackground(new DeleteCallback() {
-//            @Override
-//            public void done(ParseException e) {
-//                if (e == null) {
-//                    mySummitSession = null;
-//                    mFabCallbacks.setFabImageResource(R.drawable.ic_add);
-//                    showSnackBar(R.string.my_session_removed);
-//                    removeNotifications(summitSession);
-//                }
-//            }
-//        });
-        removeFromMySchedule(summitSession);
+    private void removeSessionFromMySchedule(MySummitSession mySummitSession) {
+        removeFromMySchedule(mySummitSession);
     }
 
     private void showSnackBar(int stringResId) {

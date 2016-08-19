@@ -4,7 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.support.design.BuildConfig;
+
+import org.androidsummit.eventapp.BuildConfig;
 
 /**
  * Created on 9/28/15.

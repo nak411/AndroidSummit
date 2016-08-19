@@ -38,6 +38,10 @@ public abstract class ParseDataListRetrievalFragment<T extends ParseObject> exte
         retrieveData(getQuery());
     }
 
+    public void retrieveDataFromLocal() {
+        retrieveDataFromLocal(getQuery());
+    }
+
     /**
      * Callers do not need to specify where to obtain the data from.  This Fragment will attempt to retrieve data from the local data store
      * If no data is found, a request will be made to the server to obtain data.
@@ -48,6 +52,10 @@ public abstract class ParseDataListRetrievalFragment<T extends ParseObject> exte
 
     protected void retrieveFromServer(final ParseQuery<T> query) {
         mDataManager.retrieveDataObjectListFromServer(query);
+    }
+
+    protected void retrieveDataFromLocal(final ParseQuery<T> query) {
+        mDataManager.retrieveDataObjectListFromLocal(query);
     }
 
     /**

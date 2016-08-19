@@ -25,6 +25,7 @@ import org.androidsummit.eventapp.model.wrappers.SessionRowItem;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -72,9 +73,10 @@ public class MySummitDayFragment extends ParseDataListRetrievalFragment<MySummit
         mView = inflater.inflate(R.layout.fragment_my_summit_day, container, false);
         initialize(mView);
         populateViews(mView);
-        retrieveData();
+        retrieveDataFromLocal();
         return mView;
     }
+
 
     private void initialize(View view) {
         mRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.refresh_layout);
@@ -104,6 +106,11 @@ public class MySummitDayFragment extends ParseDataListRetrievalFragment<MySummit
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
         hideLoading();
@@ -128,18 +135,24 @@ public class MySummitDayFragment extends ParseDataListRetrievalFragment<MySummit
 
     @Override
     public ParseQuery<MySummitSession> getQuery() {
-        return buildTodayQuery();
+        long time = getArguments().getLong(ARG_DATE);
+        Date date = new Date(time);
+        return buildTodayQuery(date);
     }
 
     @Override
     public ParseQuery<MySummitSession> getServerQuery() {
-        return buildTodayQuery();
+        return getQuery();
     }
 
-    private ParseQuery<MySummitSession> buildTodayQuery() {
-        ParseQuery<MySummitSession> parseQuery = ParseQuery.getQuery(MySummitSession.class);
-        parseQuery.orderByAscending(MySummitSession.START_TIME);
-        return parseQuery;
+    private ParseQuery<MySummitSession> buildTodayQuery(Date date) {
+        ParseQuery<MySummitSession> query = ParseQuery.getQuery(MySummitSession.class);
+        Date endDate = DateHelper.addDays(date, 1);
+        query.fromLocalDatastore();
+        query.whereGreaterThanOrEqualTo(MySummitSession.START_TIME, date);
+        query.whereLessThan(MySummitSession.START_TIME, endDate);
+        query.orderByAscending(MySummitSession.START_TIME);
+        return query;
     }
 
     private void hideLoading() {
@@ -209,7 +222,7 @@ public class MySummitDayFragment extends ParseDataListRetrievalFragment<MySummit
     @Override
     public void onRefresh() {
         //Refresh content here
-        retrieveData(getQuery());
+        retrieveDataFromLocal(getQuery());
     }
 
     @Override
