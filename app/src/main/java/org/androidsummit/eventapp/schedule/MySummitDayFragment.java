@@ -97,7 +97,9 @@ public class MySummitDayFragment extends ParseDataListRetrievalFragment<MySummit
     public void onAttach(Context context) {
         super.onAttach(context);
         initializeCallbacks(context);
-        mCallbacks.updateTitle(getArguments().getInt(ARG_SECTION_NUMBER));
+        if (!mCallbacks.isMultiDay()) {
+            mCallbacks.updateTitle(getArguments().getInt(ARG_SECTION_NUMBER));
+        }
 
     }
 

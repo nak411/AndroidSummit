@@ -27,7 +27,7 @@ import com.parse.SaveCallback;
 public class MainApplication extends Application {
 
     //Enable for debugging
-    public static final boolean DEVELOPER_MODE = true;
+    public static final boolean DEVELOPER_MODE = false;
 
     @Override
     public void onCreate() {

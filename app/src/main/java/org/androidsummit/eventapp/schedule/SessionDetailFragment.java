@@ -145,7 +145,7 @@ public class SessionDetailFragment extends SessionDetailDataFragment {
     }
 
     private void appendSpeakers(List<Speaker> speakers) {
-        if (speakers.size() > 0) {
+        if (speakers != null && speakers.size() > 0) {
             RelativeLayout container = (RelativeLayout) mView.findViewById(R.id.detail_container);
             View divider = mView.findViewById(R.id.divider);
             divider.setVisibility(View.VISIBLE);

@@ -153,21 +153,20 @@ public class SummitDayFragment extends ParseDataListRetrievalFragment<SummitSess
 
     @Override
     public ParseQuery<SummitSession> getQuery() {
-        final long date = getArguments().getLong(ARG_DATE);
+        final Date date = (Date) getArguments().getSerializable(ARG_DATE);
         return buildTodayQuery(date);
     }
 
     @Override
     public ParseQuery<SummitSession> getServerQuery() {
-        final long date = getArguments().getLong(ARG_DATE);
+        final Date date = (Date) getArguments().getSerializable(ARG_DATE);
         return buildTodayQuery(date);
     }
 
-    private ParseQuery<SummitSession> buildTodayQuery(long date) {
+    private ParseQuery<SummitSession> buildTodayQuery(Date date) {
         ParseQuery<SummitSession> query = ParseQuery.getQuery(SummitSession.class);
-        Date startDate = new Date(date);
-        Date endDate = DateHelper.addDays(startDate, 1);
-        query.whereGreaterThanOrEqualTo(SummitSession.START_TIME, startDate);
+        Date endDate = DateHelper.addDays(date, 1);
+        query.whereGreaterThanOrEqualTo(SummitSession.START_TIME, date);
         query.whereLessThan(SummitSession.START_TIME, endDate);
         query.orderByAscending(SummitSession.START_TIME);
         return query;

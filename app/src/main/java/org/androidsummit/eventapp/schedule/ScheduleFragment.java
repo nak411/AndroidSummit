@@ -26,6 +26,11 @@ public class ScheduleFragment extends Fragment {
 
     public static final String TAG = ScheduleFragment.class.getSimpleName();
 
+    public enum Type {
+        MAIN_SCHEDULE,
+        MY_SCHEDULE
+    }
+
     private FragmentCallbacks mCallbacks;
 
     private List<Date> mDates;
@@ -34,6 +39,7 @@ public class ScheduleFragment extends Fragment {
      * The fragment argument representing the section number for this fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
+
 
     public ScheduleFragment() {
         // Required empty public constructor
@@ -46,6 +52,7 @@ public class ScheduleFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,7 +83,9 @@ public class ScheduleFragment extends Fragment {
     private void initialize(View view, boolean isRestoring) {
         //Set up view pager
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.pager);
-        SchedulePagerAdapter adapter = new MainScheduleAdapter(getActivity().getSupportFragmentManager(), mDates);
+        int position =  getArguments().getInt(ARG_SECTION_NUMBER);
+        Type type = position == 2 ? Type.MY_SCHEDULE : Type.MAIN_SCHEDULE;
+        SchedulePagerAdapter adapter = new SchedulePagerAdapter(getActivity().getSupportFragmentManager(), mDates, type);
         viewPager.setAdapter(adapter);
         if (!isRestoring) {
             viewPager.setCurrentItem(getCurrentItemIndex());

@@ -42,12 +42,8 @@ public class SummitCache {
 
         //TODO make more dynamic
         Date[] mTitles = {
-                DateHelper.getFormattedFullDateAndTime("05", "22", "2016"),
-                DateHelper.getFormattedFullDateAndTime("05", "23", "2016"),
-                DateHelper.getFormattedFullDateAndTime("05", "24", "2016"),
-                DateHelper.getFormattedFullDateAndTime("05", "25", "2016"),
-                DateHelper.getFormattedFullDateAndTime("05", "26", "2016"),
-                DateHelper.getFormattedFullDateAndTime("05", "27", "2016"),
+                DateHelper.getFormattedFullDateAndTime("09", "30", "2015"),
+                DateHelper.getFormattedFullDateAndTime("09", "31", "2015")
         };
         setScheduleDates(Arrays.asList(mTitles));
     }

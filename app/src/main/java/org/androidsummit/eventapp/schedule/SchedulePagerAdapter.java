@@ -3,6 +3,7 @@ package org.androidsummit.eventapp.schedule;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.util.Log;
 
 import org.androidsummit.eventapp.utils.helpers.DateHelper;
 
@@ -14,13 +15,17 @@ import java.util.List;
  *
  * Created by Naveed on 3/12/15.
  */
-public abstract class SchedulePagerAdapter extends FragmentStatePagerAdapter {
+public class SchedulePagerAdapter extends FragmentStatePagerAdapter {
 
+    private static final String TAG = "SchedulePagerAdapter";
     private List<Date> mDates;
 
-    public SchedulePagerAdapter(FragmentManager fm, List<Date> dates)  {
+    private ScheduleFragment.Type mType;
+
+    public SchedulePagerAdapter(FragmentManager fm, List<Date> dates, ScheduleFragment.Type type)  {
         super(fm);
         mDates = dates;
+        mType = type;
     }
 
     @Override
@@ -30,16 +35,16 @@ public abstract class SchedulePagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return getFragment(position, mDates.get(position));
+        switch (mType) {
+            case MY_SCHEDULE:
+                return MySummitDayFragment.newInstance(position, mDates.get(position).getTime());
+            case MAIN_SCHEDULE:
+                return SummitDayFragment.newInstance(position, mDates.get(position));
+        }
+        Log.w(TAG, "Type did not match for schedule " + mType);
+        return SummitDayFragment.newInstance(position, mDates.get(position));
     }
 
-    /**
-     * Return the fragment that should be displayed at the specified position
-     * @param position the position of the current page
-     * @param date the date for the current page
-     * @return the fragment to display
-     */
-    protected abstract Fragment getFragment(int position, Date date);
 
     @Override
     public CharSequence getPageTitle(int position) {

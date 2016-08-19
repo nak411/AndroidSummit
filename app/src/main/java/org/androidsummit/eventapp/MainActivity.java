@@ -168,8 +168,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private Fragment getMultiDateScheduleFragment(int position) {
-        Fragment fragment = ScheduleFragment.newInstance(position + 1);
-        return fragment;
+        return ScheduleFragment.newInstance(position + 1);
     }
 
     private void swapFragment(FragmentManager fragmentManager, Fragment fragment) {

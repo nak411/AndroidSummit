@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="hyperlink_blue">#3366BB</color>
+
+    <color name="dark_royal_blue">#020824</color>
+    <!-- 80% opacity-->
+    <color name="dark_royal_blue_transparent">#CC020824</color>
+    <color name="cap_one_blue">#003A6F</color>
+    <color name="medium_white">#f3f6ff</color>
+    <color name="light_gray">#f1f1f1</color>
+    <color name="medium_gray">#E9E9E9</color>
+    <color name="dark_gray">#9c9c9c</color>
+    <color name="cap_one_red">#A12830</color>
+    <!-- Blue theme with light blue accent-->
+    <color name="dark_blue">#1976D2</color>
+    <color name="blue">#2196F3</color>
+    <color name="grey_blue">#BBDEFB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="pink">#E91E63</color>
+    <color name="medium_light_black">#3f3f3f</color>
+    <color name="medium_black">#212121</color>
+    <color name="dark_grey">#727272</color>
+    <color name="light_grey">#B6B6B6</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="android_green">#A4C639</color>
+
+    <color name="window_background">#FFF5F5F5</color>
 </resources>
