@@ -23,7 +23,7 @@ public class AboutFragment extends Fragment implements View.OnClickListener {
 
     private FragmentCallbacks mCallbacks;
 
-    public static final String MAP_URI = "google.navigation:q=8020 Towers Crescent Dr, Mclean, VA 22182";
+    public static final String MAP_URI = "google.navigation:q=1680 Capital One Drive McLean, VA 22102";
 
     /**
      * The fragment argument representing the section number for this fragment.

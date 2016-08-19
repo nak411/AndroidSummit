@@ -75,8 +75,7 @@
     <string name="event_ended_label">This event has now ended.</string>
     <string name="nav_header_title">Android Summit</string>
     <string name="time">Time</string>
-    <string name="what_is_android_summit">Android Summit is a one-day, multi-track conference focused on designing and developing for
-        Android.
+    <string name="what_is_android_summit">Android Summit 2016 is a two-day, multi-track event focused on designing, developing and testing for Android.
     </string>
     <string name="text_android">Android</string>
     <string name="what_to_expect">What to expect</string>
@@ -90,8 +89,8 @@
     <string name="swag">Get your swag on</string>
     <string name="kick_off">Help us kick off our first Android Summit with a bang!</string>
     <string name="event_date">September 30, 2015</string>
-    <string name="location">Capital One DIG Event Space</string>
-    <string name="event_location">Vienna, VA</string>
+    <string name="location">1680 Capital One Drive</string>
+    <string name="event_location">McLean, VA 22102</string>
     <string name="get_directions">GET DIRECTIONS</string>
     <string name="sponsor">Sponsor</string>
     <string name="contact">Questions?</string>
