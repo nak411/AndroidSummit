@@ -24,5 +24,12 @@
     <color name="cyan">#00BCD4</color>
     <color name="android_green">#A4C639</color>
 
+    <!--Purple theme-->
+    <color name="purple">#673AB7</color>
+    <color name="dark_purple">#512DA8</color>
+    <color name="primary_text">#212121</color>
+    <color name="deep_orange">#FF5722</color>
+    <color name="dark_orange">#E64A19</color>
+
     <color name="window_background">#FFF5F5F5</color>
 </resources>

@@ -5,7 +5,10 @@
     <style name="AppTheme" parent="Base.AppTheme">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@color/dark_blue</item>
+        <item name="android:navigationBarColor">@color/dark_purple</item>
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryDark">@color/dark_purple</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
     </style>
 
     <!-- App bar shadow-->

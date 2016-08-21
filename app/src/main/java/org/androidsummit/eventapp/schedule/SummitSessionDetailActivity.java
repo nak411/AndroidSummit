@@ -78,16 +78,11 @@ public class SummitSessionDetailActivity extends CollapsingToolbarColorChangerAc
 
     @Override
     public void setFabClickListener(View.OnClickListener onClickListener) {
-//        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.add_session_fab);
-//        floatingActionButton.setOnClickListener(onClickListener);
         setOnFabClickListener(onClickListener);
     }
 
     @Override
     public void setFabImageResource(int drawableResourceId) {
-//        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.add_session_fab);
-//        floatingActionButton.animate().rotationBy(180).start();
-//        floatingActionButton.setImageResource(drawableResourceId);
         setFabDrawableWithRotationAnimation(drawableResourceId, FAB_ROTATION_DEGREE);
     }
 

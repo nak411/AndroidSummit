@@ -27,6 +27,7 @@ public class EventHelper {
 
     public static final String TRACK_DEVELOP = "Develop";
     public static final String TRACK_DESIGN = "Design";
+    public static final String TRACK_TEST = "Test";
     public static final String KEY_NOTE = "Keynote";
 
     private static final String OTHER = "Other";
@@ -47,6 +48,8 @@ public class EventHelper {
                 return R.drawable.ic_develop;
             case 4:
                 return R.drawable.ic_design;
+            case 5:
+                return R.drawable.ic_test;
             default:
                 return R.drawable.ic_action_android;
         }
@@ -185,23 +188,31 @@ public class EventHelper {
             case 4:
                 return TRACK_DESIGN;
             case 5:
+                return TRACK_TEST;
+            default:
                 return OTHER;
         }
-        return null;
     }
 
     public static int getColorForTypeCode(int typeCode) {
         switch (typeCode) {
+            //Assigned to nothing
             case 1:
                 return R.color.cap_one_blue;
+            //Keynote
             case 2:
                 return R.color.medium_black;
+            case 3:
+                return R.color.purple;
+            //Testing
             case 4:
-                return R.color.pink;
-            case 5:
-                return R.color.android_green;
-            default:
                 return R.color.blue;
+            //Design
+            case 5:
+                return R.color.deep_orange;
+            //Develop
+            default:
+                return R.color.purple;
 
         }
     }
@@ -209,6 +220,8 @@ public class EventHelper {
     public static int getTypeCodeForTrack(String track) {
         if (!TextUtils.isEmpty(track)) {
             if (track.equalsIgnoreCase(TRACK_DESIGN)) {
+                return 5;
+            } else if (track.equalsIgnoreCase(TRACK_TEST)) {
                 return 4;
             }
         }
