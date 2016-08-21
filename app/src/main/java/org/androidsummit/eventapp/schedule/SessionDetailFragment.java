@@ -66,9 +66,6 @@ public class SessionDetailFragment extends SessionDetailDataFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //This will hold on to instance variable on rotation.  Views will always be destroyed and recreated so make sure
-        //not to hold on to any strong references to any views.
-        //setRetainInstance(true);
     }
 
     @Override

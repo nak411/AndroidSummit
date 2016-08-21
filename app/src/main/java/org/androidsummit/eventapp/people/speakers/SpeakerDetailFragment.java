@@ -1,10 +1,13 @@
 package org.androidsummit.eventapp.people.speakers;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.TextView;
 
 import org.androidsummit.eventapp.R;
 import org.androidsummit.eventapp.fragments.DetailsFragment;
+import org.androidsummit.eventapp.people.PersonDataHelper;
 import org.androidsummit.eventapp.schedule.EventHelper;
 import org.androidsummit.eventapp.model.Speaker;
 import com.parse.ParseQuery;
@@ -34,9 +37,6 @@ public class SpeakerDetailFragment extends DetailsFragment<Speaker> {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //This will hold on to instance variable on rotation.  Views will always be destroyed and recreated so make sure
-        //not to hold on to any strong references to any views.
-        //setRetainInstance(true);
     }
     
     @Override
@@ -57,8 +57,17 @@ public class SpeakerDetailFragment extends DetailsFragment<Speaker> {
     @Override
     protected void populateViews(Speaker speaker) {
         mCallbacks.loadBackdropImage(speaker.getProfilePic());
+        TextView tvRole = (TextView) mView.findViewById(R.id.tv_role);
         TextView tvDescription = (TextView) mView.findViewById(R.id.tv_description);
         tvDescription.setText(EventHelper.formatDescription(speaker.getBio()));
+
+        String subtitle = PersonDataHelper.getSubtitle(speaker);
+        if (!TextUtils.isEmpty(subtitle)) {
+            tvRole.setText(subtitle);
+            tvRole.setVisibility(View.VISIBLE);
+        } else {
+            tvDescription.setVisibility(View.GONE);
+        }
     }
 
     @Override

@@ -204,12 +204,12 @@ public class EventHelper {
                 return R.color.medium_black;
             case 3:
                 return R.color.purple;
-            //Testing
-            case 4:
-                return R.color.blue;
             //Design
-            case 5:
+            case 4:
                 return R.color.deep_orange;
+            //Testing
+            case 5:
+                return R.color.blue;
             //Develop
             default:
                 return R.color.purple;
