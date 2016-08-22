@@ -79,7 +79,7 @@
     </string>
     <string name="text_android">Android</string>
     <string name="what_to_expect">What to expect</string>
-    <string name="learn"><![CDATA[Learn about Android design & development]]></string>
+    <string name="learn"><![CDATA[Learn about Android design, development & testing]]></string>
     <string name="developer_note">Developers: Make sure you bring your laptop with the latest stable/canary Android Studio and API 23
         SDK/tools!
     </string>
@@ -87,7 +87,7 @@
     <string name="meet">Meet people who love Android</string>
     <string name="eat">Eat delicious food with new friends</string>
     <string name="swag">Get your swag on</string>
-    <string name="kick_off">Help us kick off our first Android Summit with a bang!</string>
+    <string name="kick_off">Help us kick off our 2nd Android Summit with a bang!</string>
     <string name="event_date">September 30, 2015</string>
     <string name="location">1680 Capital One Drive</string>
     <string name="event_location">McLean, VA 22102</string>
