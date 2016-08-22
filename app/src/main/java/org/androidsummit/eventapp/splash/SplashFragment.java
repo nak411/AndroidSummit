@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import org.androidsummit.eventapp.R;
 import org.androidsummit.eventapp.MainActivity;
 import org.androidsummit.eventapp.cache.SummitCache;
+import org.androidsummit.eventapp.cache.managers.SyncStateManager;
 import org.androidsummit.eventapp.fragments.ParseDataModificationFragment;
 import org.androidsummit.eventapp.utils.BuildUtils;
 import org.androidsummit.eventapp.utils.DebugUtils;
@@ -58,6 +59,7 @@ public class SplashFragment extends ParseDataModificationFragment {
     @Override
     public void onDataDelete(boolean onServer) {
         if (!onServer) {
+            SyncStateManager.setAllSyncFlags(getContext(), true);
             markUpgradeCompleted();
         } else {
             Log.w(TAG, "Splash activity deleting data on server");

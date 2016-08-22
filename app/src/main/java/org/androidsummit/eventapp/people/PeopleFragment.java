@@ -147,9 +147,6 @@ public abstract class PeopleFragment<T extends Person> extends ParseDataListRetr
 
     private void updateSyncState(boolean needsUpdate) {
         if (getActivity() != null) {
-//            SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
-//            editor.putBoolean(getSyncStateKey(), needsUpdate);
-//            editor.apply();
             SyncStateManager.updateSyncState(getContext(), getSyncStateKey(), needsUpdate);
         } else {
             //Delay the update if the activity is not ready yet

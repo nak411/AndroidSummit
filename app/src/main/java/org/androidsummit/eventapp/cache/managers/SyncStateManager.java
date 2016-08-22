@@ -140,6 +140,22 @@ public class SyncStateManager {
         }
     }
 
+    /**
+     * Sets the state of each flag to require sync so the next time page is opened, it'll pull
+     * data from server
+     * @param context the context to use for retrieving shared preference
+     * @param requiresSync true if the data requires sync, false otherwise.
+     */
+    public static void setAllSyncFlags(Context context, boolean requiresSync) {
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(DataState.SYNC_MY_SCHEDULE, requiresSync);
+        editor.putBoolean(DataState.SYNC_SCHEDULE, requiresSync);
+        editor.putBoolean(DataState.SYNC_SPEAKERS, requiresSync);
+        editor.apply();
+    }
+
     private static boolean retrieveSyncState(SharedPreferences preferences) {
         if (preferences.contains(DataState.SYNC_SCHEDULE)) {
             //Not the first launch
