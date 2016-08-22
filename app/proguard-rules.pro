@@ -21,6 +21,7 @@
 -keep class com.parse.** { *; }
 -keep class com.fasterxml.jackson.databind.ObjectMapper { public <methods>; protected <methods>; }
 -keep class com.fasterxml.jackson.databind.ObjectWriter { public ** writeValueAsString(**); }
+-keep class org.androidsummit.eventapp.model.SummitSession
 
 #rules for design library
 -dontwarn android.support.design.**
