@@ -131,23 +131,8 @@ public class SummitDayFragment extends ParseDataListRetrievalFragment<SummitSess
                 mData.addAll(EventHelper.generateRowItems(summitSessions));
             }
             mAdapter.notifyDataSetChanged();
-            if (SyncStateManager.shouldInitializeMySchedule(getActivity())) {
-                List<MySummitSession> mySummitSessions = new ArrayList<>();
-                for (SummitSession session : summitSessions) {
-                    if (session.getTypeCode() == 1) {
-                        mySummitSessions.add(new MySummitSession(session.getStartTime(), session));
-                    }
-                }
-                ParseObject.pinAllInBackground(mySummitSessions, new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if (e == null) {
-                            SyncStateManager.setInitializeMySchedule(getActivity(), false);
-                        }
-                    }
-                });
-            }
         }
+
         hideLoading();
     }
 

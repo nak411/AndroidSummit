@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 import org.androidsummit.eventapp.R;
@@ -52,6 +53,8 @@ public class MySummitDayFragment extends ParseDataListRetrievalFragment<MySummit
 
     private SwipeRefreshLayout mRefreshLayout;
 
+    private TextView mTvNoItems;
+
     private volatile boolean mNeedsRefresh;
 
     public MySummitDayFragment() {
@@ -80,6 +83,7 @@ public class MySummitDayFragment extends ParseDataListRetrievalFragment<MySummit
 
     private void initialize(View view) {
         mRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.refresh_layout);
+        mTvNoItems = (TextView) view.findViewById(R.id.tv_no_items);
         mRefreshLayout.setOnRefreshListener(this);
         mNeedsRefresh = true;
         //Must post as a runnable otherwise the loading indicator will not show.
@@ -93,6 +97,12 @@ public class MySummitDayFragment extends ParseDataListRetrievalFragment<MySummit
                 }
             }
         });
+    }
+
+    private void showNoItemsView(boolean show) {
+        if (mTvNoItems != null) {
+            mTvNoItems.setVisibility(show ? View.VISIBLE : View.GONE);
+        }
     }
 
     @Override
@@ -126,6 +136,13 @@ public class MySummitDayFragment extends ParseDataListRetrievalFragment<MySummit
                 mData.clear();
                 mData.addAll(EventHelper.generateMySessionRowItems(mySummitSessions));
             }
+
+            if (mData == null || mData.isEmpty()) {
+                showNoItemsView(true);
+            } else {
+                showNoItemsView(false);
+            }
+
             //Replace current
             mAdapter.replaceData(mData);
             mAdapter.notifyDataSetChanged();

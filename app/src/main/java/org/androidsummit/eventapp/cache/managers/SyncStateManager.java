@@ -36,18 +36,6 @@ public class SyncStateManager {
     }
 
     /**
-     * Specifies whether my schedule needs to initialized or not
-     *
-     * @param context the context to use for fetching shared preferences
-     * @return true if my schedule should be initialized false otherwise.
-     */
-    public static boolean shouldInitializeMySchedule(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        //Not the first launch
-        return !preferences.contains(DataState.SYNC_MY_SCHEDULE) || preferences.getBoolean(DataState.SYNC_MY_SCHEDULE, false);
-    }
-
-    /**
      * Generic requires sync check for a given key.
      *
      * @param context the context to use for retrieving shared preferences
@@ -90,23 +78,6 @@ public class SyncStateManager {
         }
     }
 
-    /**
-     * Marks the my schedule state
-     *
-     * @param context      the context to use for retrieving shared preferences.
-     * @param requiresSync true if my schedule requires initialization, false other wise.
-     */
-    public static void setInitializeMySchedule(Context context, boolean requiresSync) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        //If preferences do not contain the key then we write it right away ignoring the second condition
-        //If there is a key
-        //      false value indicates that schedule does not require sync.
-        //      true indicates that schedule needs to be synced
-        //Here we want to avoid extra rights so we only write the value when schedule needs to be re-synced
-        if (!preferences.contains(DataState.SYNC_MY_SCHEDULE)) {
-            preferences.edit().putBoolean(DataState.SYNC_MY_SCHEDULE, requiresSync).apply();
-        }
-    }
 
     /**
      * Checks whether sync is required or not.  Sets the flag for each schedule page to true if sync is required. No action is taken other
@@ -143,7 +114,8 @@ public class SyncStateManager {
     /**
      * Sets the state of each flag to require sync so the next time page is opened, it'll pull
      * data from server
-     * @param context the context to use for retrieving shared preference
+     *
+     * @param context      the context to use for retrieving shared preference
      * @param requiresSync true if the data requires sync, false otherwise.
      */
     public static void setAllSyncFlags(Context context, boolean requiresSync) {
