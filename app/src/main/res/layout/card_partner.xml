@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@string/sponsor"
+            android:text="@string/partners"
             android:textColor="@color/medium_black"
             android:textSize="@dimen/text_size_headline_material" />
 
@@ -28,14 +28,24 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/default_micro_padding"
             android:background="@color/pink"
-            android:paddingBottom="@dimen/default_mini_padding" />
+            android:layout_marginBottom="@dimen/default_padding" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:padding="@dimen/default_padding"
-            android:src="@drawable/cof_logo" />
+            android:padding="@dimen/default_micro_padding"
+            android:src="@drawable/modev_logo" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="@dimen/default_padding"
+            android:paddingLeft="@dimen/default_micro_padding"
+            android:paddingRight="@dimen/default_micro_padding"
+            android:paddingBottom="@dimen/default_micro_padding"
+            android:src="@drawable/gdgdc_logo" />
 
     </LinearLayout>
 </android.support.v7.widget.CardView>

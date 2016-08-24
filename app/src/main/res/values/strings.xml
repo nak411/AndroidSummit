@@ -105,4 +105,6 @@
     <string name="my_session_removed">Successfully removed from My Schedule, You will not be notified before start of session</string>
     <string name="my_session_ended">It\'s too late to subscribe for notifications, session either started or already ended.</string>
     <string name="no_items_in_my_schedule">Looks like you have no items here.  Try adding some from the schedule tab.</string>
+    <string name="partners">Partners</string>
+    <string name="benefiting">Benefiting</string>
 </resources>

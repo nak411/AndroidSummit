@@ -15,6 +15,10 @@
 
         <include layout="@layout/card_sponsor"/>
 
+        <include layout="@layout/card_partner"/>
+
+        <include layout="@layout/card_benefiting"/>
+
         <include layout="@layout/card_contact"/>
     </LinearLayout>
 </ScrollView>
