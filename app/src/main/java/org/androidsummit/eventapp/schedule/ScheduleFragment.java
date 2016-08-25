@@ -57,9 +57,14 @@ public class ScheduleFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (SummitCache.getScheduleDates() == null) {
+            SummitCache.init();
+        }
         mDates = SummitCache.getScheduleDates();
         //TODO handle case dates are empty
-        SyncStateManager.setupDataSyncIfNeeded(getActivity(), mDates.size());
+        if (getActivity() != null && mDates != null) {
+            SyncStateManager.setupDataSyncIfNeeded(getActivity(), mDates.size());
+        }
     }
 
     @Override

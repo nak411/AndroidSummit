@@ -87,26 +87,27 @@ public class SyncStateManager {
      * @param pageCount the total number of pages in the schedule
      */
     public static void setupDataSyncIfNeeded(Context context, int pageCount) {
-
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        //Check if sync is required
-        boolean needsSync = retrieveSyncState(preferences);
-        if (needsSync) {
-            SharedPreferences.Editor editor = preferences.edit();
-            int syncDaysGroupCounter = 0;
-            //All schedule pages should sync with server next time the user opens them
-            if (pageCount <= MAX_SHIFT_COUNT) {
-                int flag = 1;
-                //The value can be stored in one integer.  This will handle a max of 32 pages 0-31 bit indices.
-                for (int i = 0; i < pageCount; i++) {
-                    //Set all bits to 1 so the next time user opens the page, it updates
-                    flag |= (1 << i);
+        if (context != null) {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+            //Check if sync is required
+            boolean needsSync = retrieveSyncState(preferences);
+            if (needsSync) {
+                SharedPreferences.Editor editor = preferences.edit();
+                int syncDaysGroupCounter = 0;
+                //All schedule pages should sync with server next time the user opens them
+                if (pageCount <= MAX_SHIFT_COUNT) {
+                    int flag = 1;
+                    //The value can be stored in one integer.  This will handle a max of 32 pages 0-31 bit indices.
+                    for (int i = 0; i < pageCount; i++) {
+                        //Set all bits to 1 so the next time user opens the page, it updates
+                        flag |= (1 << i);
+                    }
+                    editor.putInt(DataState.SYNC_DAY + syncDaysGroupCounter, flag);
+                    editor.apply();
+                } else {
+                    //The value needs to be stored in multiple integers
+                    //TODO implement for now we are assuming that number of pages in schedule will be less than 32
                 }
-                editor.putInt(DataState.SYNC_DAY + syncDaysGroupCounter, flag);
-                editor.apply();
-            } else {
-                //The value needs to be stored in multiple integers
-                //TODO implement for now we are assuming that number of pages in schedule will be less than 32
             }
         }
     }
