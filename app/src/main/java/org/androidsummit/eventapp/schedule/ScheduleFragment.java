@@ -16,6 +16,7 @@ import org.androidsummit.eventapp.utils.helpers.DateHelper;
 import org.androidsummit.eventapp.interfaces.FragmentCallbacks;
 import org.androidsummit.eventapp.ui.SlidingTabLayout;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -61,10 +62,20 @@ public class ScheduleFragment extends Fragment {
             SummitCache.init();
         }
         mDates = SummitCache.getScheduleDates();
+        if (mDates == null) {
+            mDates = getAsList();
+        }
         //TODO handle case dates are empty
-        if (getActivity() != null && mDates != null) {
+        if (getActivity() != null) {
             SyncStateManager.setupDataSyncIfNeeded(getActivity(), mDates.size());
         }
+    }
+
+    private List<Date> getAsList() {
+        List<Date> list = new ArrayList<>();
+        list.add(DateHelper.getFormattedFullDateAndTime("08", "26", "2016"));
+        list.add(DateHelper.getFormattedFullDateAndTime("08", "27", "2016"));
+        return list;
     }
 
     @Override
