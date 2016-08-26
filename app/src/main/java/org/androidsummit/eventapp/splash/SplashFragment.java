@@ -48,12 +48,13 @@ public class SplashFragment extends ParseDataModificationFragment {
     }
 
     private void checkUpgradeStatus() {
-        if (BuildUtils.requiresUpgrade(getContext())) {
-            DebugUtils.log(TAG, "Requires upgrade - setting upgrade flags");
-            clearAllLocalData();
-        } else {
-            startMainActivity();
-        }
+//        if (BuildUtils.requiresUpgrade(getContext())) {
+//            DebugUtils.log(TAG, "Requires upgrade - setting upgrade flags");
+//            clearAllLocalData();
+//        } else {
+//            startMainActivity();
+//        }
+        startMainActivity();
     }
 
     @Override

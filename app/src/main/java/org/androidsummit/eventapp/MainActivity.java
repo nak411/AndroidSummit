@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity
         mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 
         if (savedInstanceState == null) {
+            if (SummitCache.getScheduleDates() == null) {
+                SummitCache.init();
+            }
             mIsMultiDay = SummitCache.getScheduleDates().size() > 1;
             mTitle = getTitle();
             if (mCurrentFragmentIndex != -1) {
@@ -156,6 +159,8 @@ public class MainActivity extends AppCompatActivity
 
     private Fragment getSingleScheduleFragment(int position) {
         Fragment fragment = null;
+        //TODO find a common place to init.
+        SummitCache.init();
         switch (position) {
             case 0:
                 fragment = SummitDayFragment.newInstance(position + 1, SummitCache.getStartDate());
