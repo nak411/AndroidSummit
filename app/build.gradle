@@ -8,12 +8,16 @@ android {
         applicationId "org.androidsummit.eventapp"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 3
-        versionName "1.2"
+        versionCode 10
+        versionName "1.5.5"
     }
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

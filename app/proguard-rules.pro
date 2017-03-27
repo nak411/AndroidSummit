@@ -15,3 +15,25 @@
 #-keepclassmembers image_class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# Parse
+-dontwarn com.parse.**
+-keep class com.parse.** { *; }
+-keep class com.fasterxml.jackson.databind.ObjectMapper { public <methods>; protected <methods>; }
+-keep class com.fasterxml.jackson.databind.ObjectWriter { public ** writeValueAsString(**); }
+-keep class org.androidsummit.eventapp.model.SummitSession
+
+#rules for design library
+-dontwarn android.support.design.**
+-keep class android.support.design.** { *; }
+-keep interface android.support.design.** { *; }
+-keep public class android.support.design.R$* { *; }
+
+#Rules for support library
+-dontwarn android.support.v7.widget.**
+-keep public class android.support.v7.widget.** { *; }
+
+# Allow obfuscation of android.support.v7.internal.view.menu.**
+# to avoid problem on Samsung 4.2.2 devices with appcompat v21
+# see https://code.google.com/p/android/issues/detail?id=78377
+-keep class !android.support.v7.internal.view.menu.**,android.support.** {*;}

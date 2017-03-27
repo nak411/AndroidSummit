@@ -1,6 +1,6 @@
 package org.androidsummit.eventapp.model.wrappers;
 
-import org.androidsummit.eventapp.enums.SessionRowViewType;
+import org.androidsummit.eventapp.model.enums.SessionRowViewType;
 import org.androidsummit.eventapp.model.SummitSession;
 
 import java.util.List;
@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * Wraps two types of data objects that are used by the session recycler view. Only one item will me present at any time.
  * The row is either a header of a {@link SummitSession}
- *
+ * <p/>
  * {@link SummitSession} and text for a header view.
- *
+ * <p/>
  * Created on 9/16/15.
  */
 public class SessionRowItem {
@@ -33,7 +33,7 @@ public class SessionRowItem {
         mViewType = SessionRowViewType.SESSION;
 
         if (formatSpeakerNames) {
-           mFormattedSpeakerNames = formatSpeakerNames(mSession.getSpeakerNames());
+            mFormattedSpeakerNames = formatSpeakerNames(mSession.getSpeakerNames());
         }
     }
 
@@ -55,20 +55,23 @@ public class SessionRowItem {
     }
 
     public String getHeaderText() {
-        return  mHeaderText;
+        return mHeaderText;
     }
 
     /**
      * Formats the name of speakers using & separators.
+     *
      * @param speakerNames the names of speakers to format
      * @return the formatted names
      */
     private String formatSpeakerNames(List<String> speakerNames) {
         StringBuilder sb = new StringBuilder();
         String delimiter = "";
-        for (String name : speakerNames) {
-            sb.append(delimiter).append(name);
-            delimiter = " & ";
+        if (speakerNames != null) {
+            for (String name : speakerNames) {
+                sb.append(delimiter).append(name);
+                delimiter = " & ";
+            }
         }
         return sb.toString();
     }

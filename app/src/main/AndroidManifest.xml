@@ -20,46 +20,52 @@
     <uses-permission android:name="org.androidsummit.eventapp.permission.C2D_MESSAGE" />
 
     <application
-        android:name="org.androidsummit.eventapp.MainApplication"
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="org.androidsummit.eventapp.activities.MainActivity"
+        <activity android:name=".splash.SplashActivity"
             android:label="@string/app_name"
+            android:noHistory="true"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="org.androidsummit.eventapp.activities.SummitSessionDetailActivity"
-            android:label="@string/title_activity_session_detail"
-            android:parentActivityName=".activities.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.androidsummit.eventapp.activities.MainActivity" />
+            android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".activities.SpeakerDetailActivity"
+            android:name=".schedule.SummitSessionDetailActivity"
+            android:label="@string/title_activity_session_detail"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".people.speakers.SpeakerDetailActivity"
             android:label="@string/title_activity_person_detail">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.androidsummit.eventapp.activities.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
-
         <activity
-                android:name=".activities.EventEndedActivity"
-                android:label="@string/title_activity_event_ended"/>
+            android:name=".navigation.EventEndedActivity"
+            android:label="@string/title_activity_event_ended" />
 
         <!-- Push notifications -->
         <!-- Service -->
         <service android:name="com.parse.PushService" />
+
         <receiver
-                android:name="org.androidsummit.eventapp.receivers.DataUpdatePushBroadcastReceiver"
-                android:exported="false">
+            android:name=".receivers.DataUpdatePushBroadcastReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.parse.push.intent.RECEIVE" />
                 <action android:name="com.parse.push.intent.DELETE" />
@@ -76,9 +82,7 @@
                 <category android:name="org.androidsummit.eventapp" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".notifications.NotificationPublisher" />
-
     </application>
 
 </manifest>

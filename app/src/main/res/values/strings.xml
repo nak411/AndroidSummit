@@ -75,12 +75,11 @@
     <string name="event_ended_label">This event has now ended.</string>
     <string name="nav_header_title">Android Summit</string>
     <string name="time">Time</string>
-    <string name="what_is_android_summit">Android Summit is a one-day, multi-track conference focused on designing and developing for
-        Android.
+    <string name="what_is_android_summit">Android Summit 2016 is a two-day, multi-track event focused on designing, developing and testing for Android.
     </string>
     <string name="text_android">Android</string>
     <string name="what_to_expect">What to expect</string>
-    <string name="learn"><![CDATA[Learn about Android design & development]]></string>
+    <string name="learn"><![CDATA[Learn about Android design, development & testing]]></string>
     <string name="developer_note">Developers: Make sure you bring your laptop with the latest stable/canary Android Studio and API 23
         SDK/tools!
     </string>
@@ -88,10 +87,10 @@
     <string name="meet">Meet people who love Android</string>
     <string name="eat">Eat delicious food with new friends</string>
     <string name="swag">Get your swag on</string>
-    <string name="kick_off">Help us kick off our first Android Summit with a bang!</string>
+    <string name="kick_off">Help us kick off our 2nd Android Summit with a bang!</string>
     <string name="event_date">September 30, 2015</string>
-    <string name="location">Capital One DIG Event Space</string>
-    <string name="event_location">Vienna, VA</string>
+    <string name="location">1680 Capital One Drive</string>
+    <string name="event_location">McLean, VA 22102</string>
     <string name="get_directions">GET DIRECTIONS</string>
     <string name="sponsor">Sponsor</string>
     <string name="contact">Questions?</string>
@@ -105,4 +104,7 @@
     <string name="my_session_added">Successfully added to My Schedule, You will be notified 5 minutes before the start of session</string>
     <string name="my_session_removed">Successfully removed from My Schedule, You will not be notified before start of session</string>
     <string name="my_session_ended">It\'s too late to subscribe for notifications, session either started or already ended.</string>
+    <string name="no_items_in_my_schedule">Looks like you have no items here.  Try adding some from the schedule tab.</string>
+    <string name="partners">Partners</string>
+    <string name="benefiting">Benefiting</string>
 </resources>

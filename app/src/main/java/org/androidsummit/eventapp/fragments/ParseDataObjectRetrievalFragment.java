@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 
-import org.androidsummit.eventapp.managers.DataManager;
+import org.androidsummit.eventapp.cache.managers.DataManager;
 
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -134,11 +134,27 @@ public abstract class ParseDataObjectRetrievalFragment<T extends ParseObject> ex
     }
 
     /**
+     * Save a generic parse object in the local data store
+     * @param obj the object to save
+     */
+    protected void saveGenericObjectToLocal(ParseObject obj) {
+        mDataManager.saveToLocal(obj);
+    }
+
+    /**
      * Delete the provided object from local data store
      *
      * @param obj the object to delete
      */
     protected void deleteFromLocal(T obj) {
+        mDataManager.deleteFromLocal(obj);
+    }
+
+    /**
+     * Delete the provided parse object from the local data store
+     * @param obj the ParseObejct to delete
+     */
+    protected void deleteGenericFromLocal(ParseObject obj) {
         mDataManager.deleteFromLocal(obj);
     }
 

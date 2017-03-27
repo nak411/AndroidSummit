@@ -1,8 +1,7 @@
-<android.support.v4.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <RelativeLayout
@@ -10,51 +9,55 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/default_padding"
-        tools:context="org.androidsummit.eventapp.fragments.schedule.SessionDetailFragment">
+        tools:context=".schedule.SessionDetailFragment">
 
 
         <TextView
-                android:id="@+id/tv_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="?attr/colorPrimaryDark"
-                android:textSize="@dimen/text_size_title_material"/>
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimaryDark"
+            android:textSize="@dimen/text_size_title_material"
+            tools:text="@string/place_holder_small" />
 
         <TextView
-                android:id="@+id/tv_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/default_padding"
-                android:layout_below="@id/tv_time"
-                android:textSize="@dimen/text_size_title_material"/>
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_time"
+            android:paddingTop="@dimen/default_padding"
+            android:textSize="@dimen/text_size_title_material"
+            tools:text="@string/place_holder_small"/>
 
         <TextView
-                android:id="@+id/tv_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/default_padding"
-                android:textColor="@color/medium_black"
-                android:layout_below="@id/tv_location"/>
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_location"
+            android:paddingTop="@dimen/default_padding"
+            android:textColor="@color/medium_black"
+            tools:text="@string/place_holder_multi_line"/>
 
         <TextView
-                android:id="@+id/tv_track"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="?attr/colorPrimaryDark"
-                android:paddingTop="@dimen/default_padding"
-                android:layout_below="@id/tv_description"
-                android:textSize="@dimen/text_size_title_material"/>
+            android:id="@+id/tv_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_description"
+            android:paddingTop="@dimen/default_padding"
+            android:textColor="?attr/colorPrimaryDark"
+            android:textSize="@dimen/text_size_title_material"
+            tools:text="@string/place_holder_small"/>
 
         <View
-                android:id="@+id/divider"
-                android:layout_marginTop="@dimen/default_padding"
-                android:visibility="gone"
-                android:layout_below="@id/tv_track"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/divider"/>
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_track"
+            android:layout_marginTop="@dimen/default_padding"
+            android:background="@drawable/divider"
+            android:visibility="gone" />
 
-            <!--Presenters are added dynamically below the divider-->
+        <!--Presenters are added dynamically below the divider-->
     </RelativeLayout>
 
 </android.support.v4.widget.NestedScrollView>

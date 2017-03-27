@@ -13,6 +13,8 @@ public class DataState {
 
     public static final String SYNC_MY_SCHEDULE = "syncMySchedule";
 
+    public static final String SYNC_DAY = "syncDay";
+
     public static final String SYNC_SPEAKERS = "syncSpeakers";
 
     public static final String CLEAR_DATA = "clearData";

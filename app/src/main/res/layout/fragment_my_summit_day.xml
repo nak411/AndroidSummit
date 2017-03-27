@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/schedule_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -15,6 +16,19 @@
             android:layout_height="match_parent"
             android:scrollbars="vertical" />
     </android.support.v4.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tv_no_items"
+        android:text="@string/no_items_in_my_schedule"
+        android:paddingLeft="@dimen/default_mini_padding"
+        android:paddingRight="@dimen/default_mini_padding"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="@dimen/text_size_subhead_material"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        tools:visibility="visible"/>
 
     <!-- Toolbar Shadow needs to be added on view level for backwards compatiblity-->
     <View

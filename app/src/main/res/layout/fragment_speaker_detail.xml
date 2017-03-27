@@ -1,24 +1,34 @@
-<android.support.v4.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/detail_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding"
+        tools:context=".schedule.SessionDetailFragment">
 
-        <RelativeLayout
-                android:id="@+id/detail_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/default_padding"
-                tools:context="org.androidsummit.eventapp.fragments.schedule.SessionDetailFragment">
+        <TextView
+            android:id="@+id/tv_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/default_padding"
+            android:textColor="?attr/colorPrimaryDark"
+            android:textSize="@dimen/text_size_title_material"
+            tools:text="@string/place_holder_small" />
 
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/default_padding"
+            android:textColor="@color/medium_black"
+            android:textSize="@dimen/text_size_subhead_material"
+            tools:text="@string/place_holder_small" />
 
-                <TextView
-                        android:id="@+id/tv_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/text_size_subhead_material"
-                        android:textColor="@color/medium_black"/>
-
-        </RelativeLayout>
+    </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

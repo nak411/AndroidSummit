@@ -49,7 +49,8 @@
 
     <!-- Default padding for list items. This should match the action bar
          content inset so that ListActivity items line up correctly. -->
-    <dimen name="list_item_padding_horizontal_material">@dimen/action_bar_content_inset_material</dimen>
+    <dimen name="list_item_padding_horizontal_material">@dimen/action_bar_content_inset_material
+    </dimen>
 
     <!-- Padding to add to the start of the overflow action button. -->
     <dimen name="action_bar_navigation_padding_start_material">0dp</dimen>

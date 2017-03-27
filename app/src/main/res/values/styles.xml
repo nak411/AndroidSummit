@@ -1,6 +1,9 @@
 <resources>
 
     <style name="AppTheme" parent="Base.AppTheme">
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryDark">@color/dark_purple</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
     </style>
     <!-- Base application theme. -->
     <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
